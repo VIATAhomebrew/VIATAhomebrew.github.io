@@ -130,7 +130,10 @@ h1, h2, h3 {
     border-bottom: 1px solid #333;
     padding-bottom: 5px;
     margin-bottom: 20px;
-    scroll-margin-top: 150px; /* Garantisce che il titolo non sia coperto dall'header */
+}
+
+.scroll-anchor {
+    scroll-margin-top: 150px;
 }
 
 .neon-text-pink { color: var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink); }
@@ -300,3 +303,62 @@ body.lang-en-active .lang-it { display: none !important; }
 .repo-item:last-child { border-bottom: none; }
 .repo-item h4 { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; color: var(--neon-yellow); margin-bottom: 5px; }
 .repo-item p { color: var(--text-muted); font-size: 0.95rem; margin-right: 20px; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #upperheader {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    #navbar {
+        padding: 10px 15px;
+    }
+    #navbar ul {
+        gap: 15px;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem !important;
+    }
+    h2.section-title {
+        font-size: 1.6rem !important;
+    }
+    h2.lang-it.neon-text-blue, h2.lang-en.neon-text-blue {
+        font-size: 1.2rem !important;
+    }
+    
+    .container {
+        padding: 0 10px;
+        margin: 20px auto;
+    }
+    
+    .card-grid, .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        width: 100%;
+        min-width: 0 !important;
+    }
+    
+    .repo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .repo-item p {
+        margin-right: 0;
+    }
+    .repo-item .action-btn {
+        align-self: flex-start;
+        width: 100%;
+    }
+}
